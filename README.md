@@ -1,4 +1,8 @@
-# Here starts the journey with Cinescope
+# Cinescope
+
+## Authors
+- Yazid Kers
+- Jules Valances
 
 ## First install your project
 - you can copy the repo locally using `git clone`
