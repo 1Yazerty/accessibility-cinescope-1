@@ -50,7 +50,7 @@ export default function App() {
               key={film.id}
               onClick={() => setSelected(film.title)}
             >
-              <img src={film.poster} />
+              <img src={film.poster} alt={`poster de ${film.title}`} />
               <div className="film-content">
                 <div className="availability">
                   <span className={film.available ? "availability-dot available" : "availability-dot unavailable"} aria-hidden="true" />
