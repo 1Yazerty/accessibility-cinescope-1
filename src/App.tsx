@@ -26,10 +26,10 @@ export default function App() {
     <>
       <div className="topbar">
         <button type="button" className="brand" onClick={() => window.location.reload()}>CinéScope</button>
-        <div className="menu">
+        <nav className="menu" aria-label="Navigation principale">
           <a href="#programme">Programme</a>
           <a href="#infos">Informations</a>
-        </div>
+        </nav>
       </div>
 
       <div className="page">
@@ -56,7 +56,7 @@ export default function App() {
                   <span className={film.available ? "availability-dot available" : "availability-dot unavailable"} aria-hidden="true" />
                   <span>{film.available ? "Disponible" : "Indisponible"}</span>
                 </div>
-                <h4>{film.title}</h4>
+                <h2>{film.title}</h2>
                 <p>{film.genre} · {film.time}</p>
                 <button
                   type="button"

@@ -57,7 +57,8 @@ input:focus {
 
 .menu a {
     color: #dadbea;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
     padding: .15rem .35rem;
     border-radius: .3rem;
 }
@@ -112,7 +113,7 @@ input:focus {
     padding: 1rem;
 }
 
-.film-content h4 {
+.film-content h2 {
     margin: 0 2.5rem .35rem 0;
     font-size: 1.15rem;
 }
