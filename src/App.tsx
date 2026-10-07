@@ -25,7 +25,7 @@ export default function App() {
   return (
     <>
       <div className="topbar">
-        <div className="brand" onClick={() => setQuery("")}>CinéScope</div>
+        <button type="button" className="brand" onClick={() => window.location.reload()}>CinéScope</button>
         <div className="menu">
           <a href="#programme">Programme</a>
           <a href="#infos">Informations</a>
@@ -44,13 +44,22 @@ export default function App() {
 
         <div id="programme" className="film-grid">
           {filteredFilms.map((film) => (
-            <div className="film-card" key={film.id} onClick={() => setSelected(film.title)}>
+            <button
+              type="button"
+              className="film-card"
+              key={film.id}
+              onClick={() => setSelected(film.title)}
+            >
               <img src={film.poster} />
               <div className="film-content">
-                <div className={film.available ? "availability available" : "availability unavailable"} />
+                <div className="availability">
+                  <span className={film.available ? "availability-dot available" : "availability-dot unavailable"} aria-hidden="true" />
+                  <span>{film.available ? "Disponible" : "Indisponible"}</span>
+                </div>
                 <h4>{film.title}</h4>
                 <p>{film.genre} · {film.time}</p>
                 <button
+                  type="button"
                   className="favorite"
                   onClick={(event) => {
                     event.stopPropagation();
@@ -60,7 +69,7 @@ export default function App() {
                   {favorites.includes(film.id) ? "★" : "☆"}
                 </button>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
